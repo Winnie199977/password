@@ -1,21 +1,17 @@
 #猜密碼
 
-password = 'a123'
+password = 'a1234'
+count = 3
 
-guess = input('請輸入密碼 : ')
-
-count = 2
-
-while  True:
-	if guess != password:
-		if count <= 0:
-			print('失敗!')
-			break
-		else:
-			
-			print('密碼錯誤! 還有', count, '次機會')
-			guess = input('請輸入密碼 : ')
-			count = count  - 1
-	else:
+while True:
+	guess = input('請輸入密碼 : ')
+	if guess == password:
 		print('登入成功!')
 		break
+	else:
+		count = count - 1
+		print('密碼錯誤! 還有', count, '次機會')
+		if count == 0:
+			print('失敗!')
+			break
+		
